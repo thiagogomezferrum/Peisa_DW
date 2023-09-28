@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Master"
+  DTS:DTSID="{4310604B-5FF2-4664-8915-7C8B80CB7BCD}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Fv_Migración-{4310604B-5FF2-4664-8915-7C8B80CB7BCD};" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

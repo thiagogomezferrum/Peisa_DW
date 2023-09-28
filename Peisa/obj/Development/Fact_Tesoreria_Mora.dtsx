@@ -1,0 +1,2389 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/23/2012 12:10:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FV-SQL2008"
+  DTS:CreatorName="FL-0\Administrador"
+  DTS:DTSID="{C414BFAC-D528-4791-9A80-7AD2AA127524}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Fact_Tesoreria_Mora"
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{5A8885AA-ACD0-450B-926C-0045C2BF1D45}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DWPE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2FC25CFA-635D-4158-9530-7D2152826DCE}"
+      DTS:ObjectName="DWPE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mora]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FCB3DABF-40C8-4EC7-8A7D-FA8FAA12C884}"
+      DTS:ObjectName="Mora">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="22538"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sapfs\dwsap\PEISA\ECP\Mora_Pago_Prov.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 0"
+              DTS:DTSID="{23EFD2A6-AE6C-4027-B540-AD7920DBF6FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 1"
+              DTS:DTSID="{B6E972AE-9850-4ABE-9FC4-E69EC96C0B0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 2"
+              DTS:DTSID="{2FCB16A3-4667-4B1F-9470-E3F44D313A31}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 3"
+              DTS:DTSID="{B3B26724-898A-4B36-8637-FA34B901ED14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 4"
+              DTS:DTSID="{3A081407-927A-4CA2-84D0-F6DF98697F35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 5"
+              DTS:DTSID="{267C7739-E6AA-49AD-9334-667C35281C34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 6"
+              DTS:DTSID="{FF409FE1-2D76-4FF9-B71E-ADE84F89893A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 7"
+              DTS:DTSID="{A322D8C9-193F-4DDD-8A57-D0C0403B6B99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 8"
+              DTS:DTSID="{7B9BE3A1-FF73-475A-97EF-AC51A27E4E21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 9"
+              DTS:DTSID="{882C08A9-6F2B-4621-8E67-637F94073174}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 10"
+              DTS:DTSID="{862662DB-4B35-414B-B58D-A48BB76AD2D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 11"
+              DTS:DTSID="{B59E1E02-128F-4F30-996D-21F8B0C93BAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 12"
+              DTS:DTSID="{E5C86708-6B10-4FE0-81DA-A71C225D17FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 13"
+              DTS:DTSID="{74636E6D-9B4A-4A44-A1FD-6B21CEB3D2C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 14"
+              DTS:DTSID="{DC9BEE25-EA3D-443C-8BDD-A406567A3784}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 15"
+              DTS:DTSID="{63AD71BD-67F1-493E-91FA-FB6ED7F0187D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 16"
+              DTS:DTSID="{7B9B9A30-1039-4B52-BBB4-E27662EDA703}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 17"
+              DTS:DTSID="{08C662E1-13DD-4CF2-87F9-9DA481798C55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 18"
+              DTS:DTSID="{D59F1608-DC64-4AF2-95E5-21D4EEF3C5E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 19"
+              DTS:DTSID="{5E615562-FE2D-42AD-9430-FEDF61FC35FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 20"
+              DTS:DTSID="{C3D0C685-AB80-4557-89CF-D9C145698D02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 21"
+              DTS:DTSID="{E9183854-8891-43C0-A207-302D022A238C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 22"
+              DTS:DTSID="{A9B0B88C-12C7-465E-AD95-635F6864A57A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A474FB91-16A1-409E-A570-13131A92CD6D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0341BD37-6B56-4B18-B684-0107BEF36E11}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="F">
+      <DTS:VariableValue
+        DTS:DataType="8">F</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{92243616-2790-49C9-BBE1-381E24631EC1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Fecha_Desde">
+      <DTS:VariableValue
+        DTS:DataType="7">9/17/2012 4:47:30 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{252F4AB1-E9AD-4CF3-9262-1487787771F6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Fecha_Hasta">
+      <DTS:VariableValue
+        DTS:DataType="7">9/17/2012 4:47:45 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A73EC07E-F168-49DD-A734-9F57DB698634}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="P">
+      <DTS:VariableValue
+        DTS:DataType="8">P</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{224985A8-C227-406C-AD84-67ABA6FFE95B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Proceso">
+      <DTS:VariableValue
+        DTS:DataType="3">12533</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1 Control existencia archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Control de Lotes a Procesar"
+      DTS:DTSID="{BD4A7657-0DDF-419F-B80B-828A6E6A4A8B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1 Control existencia archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{438F849E-6442-4417-8296-3FF489CC7E41}"
+          SQLTask:SqlStatementSource="declare @result int&#xA;-- EXEC @result = master..xp_cmdshell 'dir \\SAPFS\DWSAP\Peisa\ECP\Mora_Pago_Prov.txt', NO_OUTPUT&#xA;select @result&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Existe" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\10 Muevo archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{4B2B2A09-F497-48FE-8D79-53F5B7EEEADE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="10 Muevo archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{438F849E-6442-4417-8296-3FF489CC7E41}"
+          SQLTask:SqlStatementSource="--EXEC master..xp_cmdshell 'move  \\sapfs\sapdw\PEISA\ECP\Mora_Pago_Prov.txt&#x9;\\FV-DW-SQL2017\BOE\FTP\Procesado\peisa\Mora_Pago_Prov.txt',  NO_OUTPUT&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2 control ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Insercion registro en dw_proceso"
+      DTS:DTSID="{90543807-6402-49A1-B99B-7877B22A925E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2 control ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2FC25CFA-635D-4158-9530-7D2152826DCE}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;declare @var int&#xA;SELECT @var=count(P.Proceso_key)&#xA;FROM dbo.DW_Procesos AS P &#xA;  WHERE p.Lote_Key  = 58 AND P.Estado_key = 0&#xA;&#xA;if @var &gt; 0&#xA; Print 'Success'&#xA;else&#xA; RAISERROR (N'No hay lotes a Procesar', 16, 1)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\3 Elegir el Proceso_Key"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Elegir el Proceso_Key"
+      DTS:DTSID="{3ADE1EB8-4B8E-41AC-AC70-C41575E7E5D1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="3 Elegir el Proceso_Key"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;SELECT     MIN(Proceso_key) AS Proceso&#xA;FROM dbo.DW_Procesos&#xA;WHERE lote_key = 58 AND Estado_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="Proceso" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\5 Toma las Fechas de Procesamiento"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Toma las Fechas de Procesamiento"
+      DTS:DTSID="{F9752ED0-C22A-4DC8-8E7F-84F6C21CFE8D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="5 Toma las Fechas de Procesamiento"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;SELECT     Fecha_desde_proceso, Fecha_hasta_proceso&#xA;FROM dbo.DW_Procesos&#xA;WHERE Proceso_key = ?"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Fecha_Desde" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::Fecha_Hasta" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\6 Borrado de interfaz"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Borrado de interfaz"
+      DTS:DTSID="{D2A55A71-00C5-4ADE-835E-AA542BB70CA8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="6 Borrado de interfaz"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use sta&#xA;delete Int_Tes_mora" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\7 Comienzo de ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{3D0C1A1D-13C7-44D4-9AC4-D902565EED01}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="7 Comienzo de ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;exec dbo.SP_Actualiza_Estado_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\8 DTS Mora"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Transformar datos: no_definido"
+      DTS:DTSID="{CF7F1E1C-D4FE-4B69-9902-2F2AFBC159B2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="8 DTS Mora"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\8 DTS Mora\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\8 DTS Mora\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Columna derivada.Inputs[Entrada de columna derivada].Columns[fecha_proceso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="fecha_proceso"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_proceso]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\8 DTS Mora\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de columna derivada].Columns[Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de columna derivada].Columns[Periodo]"
+                      name="Periodo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,10,1252)([SUBSTRING](#{Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_proceso]},1,8) + "01")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)(SUBSTRING(fecha_proceso,1,8) + "01")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\8 DTS Mora\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\8 DTS Mora\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Int_Tes_Mora]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\8 DTS Mora\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha_proceso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="fecha_proceso"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_proceso]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_proceso]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[Periodo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Periodo"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Periodo]"
+                      lineageId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de columna derivada].Columns[Periodo]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[sociedad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="sociedad"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Sociedad]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[sociedad]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[proveedor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="proveedor"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Proveedor]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[proveedor]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[rzo-social]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rzo-social"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Razon_Social]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rzo-social]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[t-doc-pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="t-doc-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[T_Doc_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nro-pago]"
+                      cachedDataType="decimal"
+                      cachedName="nro-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Doc_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[imp-pago]"
+                      cachedDataType="r8"
+                      cachedName="imp-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[cuit]"
+                      cachedDataType="decimal"
+                      cachedName="cuit"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Cuit]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cuit]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[f-doc-pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="f-doc-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Doc_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-doc-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[f-valor-pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="f-valor-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Valor_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-valor-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[imp-pago-pesos]"
+                      cachedDataType="r8"
+                      cachedName="imp-pago-pesos"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Pago_Pesos]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago-pesos]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[mon-pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="mon-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Moneda_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[ejer-pago]"
+                      cachedDataType="decimal"
+                      cachedName="ejer-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ejercicio_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nro-doc-fact]"
+                      cachedDataType="decimal"
+                      cachedName="nro-doc-fact"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Doc_Factura]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-doc-fact]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[t-doc-fac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="t-doc-fac"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[T_Doc_Fact]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-fac]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[ejer-fact]"
+                      cachedDataType="decimal"
+                      cachedName="ejer-fact"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ejercicio_Fact]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-fact]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[f-vto-fact]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="f-vto-fact"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Vencimiento_Fact]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-vto-fact]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[imp-fact]"
+                      cachedDataType="r8"
+                      cachedName="imp-fact"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Fact]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[imp-fact-pesos]"
+                      cachedDataType="r8"
+                      cachedName="imp-fact-pesos"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Fact_Pesos]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact-pesos]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[mon-fact]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="mon-fact"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Moneda_Fact]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-fact]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[debe-haber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="debe-haber"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Debe_Haber]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[debe-haber]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[cot-pago]"
+                      cachedDataType="r8"
+                      cachedName="cot-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cot_Pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cot-pago]" />
+                    <inputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[via-pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="via-pago"
+                      externalMetadataColumnId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Via_pago]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[via-pago]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Sociedad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Cod_Sociedad" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Razon_Social]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Razon_Social" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Debe_Haber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Debe_Haber" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_proceso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Fecha_proceso" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Proveedor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Cod_Proveedor" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[T_Doc_Pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="T_Doc_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[T_Doc_Fact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="T_Doc_Fact" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Doc_Pago]"
+                      dataType="wstr"
+                      length="10"
+                      name="Nro_Doc_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Doc_Factura]"
+                      dataType="wstr"
+                      length="10"
+                      name="Nro_Doc_Factura" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nro_Cuit]"
+                      dataType="wstr"
+                      length="11"
+                      name="Nro_Cuit" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ejercicio_Pago]"
+                      dataType="wstr"
+                      length="4"
+                      name="Ejercicio_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ejercicio_Fact]"
+                      dataType="wstr"
+                      length="4"
+                      name="Ejercicio_Fact" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Doc_Pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="F_Doc_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Valor_Pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="F_Valor_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Moneda_Pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Cod_Moneda_Pago" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Pago]"
+                      dataType="numeric"
+                      name="Importe_Pago"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Pago_Pesos]"
+                      dataType="numeric"
+                      name="Importe_Pago_Pesos"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cod_Moneda_Fact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Cod_Moneda_Fact" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Fact]"
+                      dataType="numeric"
+                      name="Importe_Fact"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Importe_Fact_Pesos]"
+                      dataType="numeric"
+                      name="Importe_Fact_Pesos"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[F_Vencimiento_Fact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="F_Vencimiento_Fact" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Dias_Abs_fvto]"
+                      dataType="i2"
+                      name="Dias_Abs_fvto" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Periodo" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cot_Pago]"
+                      dataType="numeric"
+                      name="Cot_Pago"
+                      precision="7"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Via_pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Via_pago" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\8 DTS Mora\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\8 DTS Mora\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="22538"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\8 DTS Mora\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Mora]"
+                  connectionManagerRefId="Package.ConnectionManagers[Mora]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_proceso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 0]"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[fecha_proceso]"
+                      name="fecha_proceso"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[sociedad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 1]"
+                      length="4"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[sociedad]"
+                      name="sociedad"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cuit]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 2]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cuit]"
+                      name="cuit"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[proveedor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 3]"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[proveedor]"
+                      name="proveedor"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rzo-social]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 4]"
+                      length="50"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[rzo-social]"
+                      name="rzo-social"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 5]"
+                      length="2"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-pago]"
+                      name="t-doc-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-pago]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 6]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-pago]"
+                      name="nro-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-pago]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 7]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-pago]"
+                      name="ejer-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-doc-pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 8]"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-doc-pago]"
+                      name="f-doc-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-valor-pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 9]"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-valor-pago]"
+                      name="f-valor-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 10]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago]"
+                      name="imp-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago-pesos]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 11]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-pago-pesos]"
+                      name="imp-pago-pesos"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 12]"
+                      length="3"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-pago]"
+                      name="mon-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cot-pago]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 13]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[cot-pago]"
+                      name="cot-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[via-pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 14]"
+                      length="1"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[via-pago]"
+                      name="via-pago"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-fac]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 15]"
+                      length="2"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[t-doc-fac]"
+                      name="t-doc-fac"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-doc-fact]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 16]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[nro-doc-fact]"
+                      name="nro-doc-fact"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-fact]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 17]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[ejer-fact]"
+                      name="ejer-fact"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-vto-fact]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 18]"
+                      length="10"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[f-vto-fact]"
+                      name="f-vto-fact"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 19]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact]"
+                      name="imp-fact"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact-pesos]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 20]"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[imp-fact-pesos]"
+                      name="imp-fact-pesos"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-fact]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 21]"
+                      length="3"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[mon-fact]"
+                      name="mon-fact"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[debe-haber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 22]"
+                      length="1"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[debe-haber]"
+                      name="debe-haber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 0" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 1" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 2" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 3" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 4" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 5" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 6" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 7" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 8" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 9" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 10" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 11" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 12" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 13]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 13" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 14" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 15]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 15" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 16]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 16" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 17]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 17" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 18" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 19" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 20" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 21]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 21" />
+                    <externalMetadataColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 22]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Columna 22" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\8 DTS Mora.Paths[Salida de columna derivada]"
+              endId="Package\8 DTS Mora\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de columna derivada"
+              startId="Package\8 DTS Mora\Columna derivada.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\8 DTS Mora.Paths[Salida de origen de archivo plano]"
+              endId="Package\8 DTS Mora\Columna derivada.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de archivo plano"
+              startId="Package\8 DTS Mora\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\9 carga DW"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="carga"
+      DTS:DTSID="{8713025C-3F3D-440F-8C06-F001E392B080}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="9 carga DW"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;exec SP_Carga_Fact_Tesoreria_Mora ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z1 Salida por control de procesos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Salida por control de procesos"
+      DTS:DTSID="{1481B61A-B376-441C-930A-ACB304300B17}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z1 Salida por control de procesos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="Insert Into DW_Procesos (Lote_key, Fecha_inicio_ejecucion, Fecha_fin_ejecucion, Estado_Key,Localizacion)&#xA;&#x9;SELECT 58,getdate() Fecha_inicio_ejecucion, getdate() Fecha_fin_ejecucion, 10 Estado_Key,'Falta archivo Mora_Pago_Prov.txt'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z2 Falta registro dim dw procesos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{EA48601F-B91C-49D0-A8CF-5174170D8392}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z2 Falta registro dim dw procesos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2FC25CFA-635D-4158-9530-7D2152826DCE}"
+          SQLTask:SqlStatementSource="use DWPE&#xA;INSERT INTO DW_Procesos (Lote_key, Fecha_inicio_ejecucion, Fecha_fin_ejecucion, Estado_Key)&#xA;SELECT Lote_key, getdate() Fecha_inicio_ejecucion, getdate() Fecha_fin_ejecucion, 3 Estado_Key&#xA;FROM dbo.DW_Lotes&#xA;WHERE Lote_key = 58" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z8 Error en carga Interfaz facturas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Error en carga Interfaz"
+      DTS:DTSID="{A2B96CAF-83A3-489C-946D-5E47FD0301D7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z8 Error en carga Interfaz facturas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2FC25CFA-635D-4158-9530-7D2152826DCE}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 5" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z9 Error carga"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Error carga"
+      DTS:DTSID="{CB9E5A1D-D1B9-4ABB-AB93-1C7791CB3E47}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z9 Error carga"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2FC25CFA-635D-4158-9530-7D2152826DCE}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 4" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8B39DA1D-68BE-4AB0-B91F-335EFDE10CF5}"
+      DTS:From="Package\2 control ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\3 Elegir el Proceso_Key" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{A19623D9-9612-4698-97AF-3DA942FF71CF}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe == 0"
+      DTS:From="Package\1 Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\2 control ejecucion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C29B6976-767D-4EFD-9707-BCF98ED73B6D}"
+      DTS:EvalOp="1"
+      DTS:Expression="@Existe &gt; 0"
+      DTS:From="Package\1 Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\z1 Salida por control de procesos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{90F2FE0A-37DF-4560-8695-EF059507C19F}"
+      DTS:From="Package\7 Comienzo de ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\8 DTS Mora" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4183708-9AD7-4AD8-87A3-09F820E1B064}"
+      DTS:From="Package\9 carga DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\10 Muevo archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{21D001B1-17F8-49E9-95DD-41369243EAD1}"
+      DTS:From="Package\8 DTS Mora"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\9 carga DW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE63C949-C211-4476-BF7E-FA966B4D2934}"
+      DTS:From="Package\2 control ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 5"
+      DTS:To="Package\z2 Falta registro dim dw procesos"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{32339309-59BF-4DEE-90DB-F7E607233B12\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{32339309-59BF-4DEE-90DB-F7E607233B12}"
+      DTS:From="Package\3 Elegir el Proceso_Key"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{32339309-59BF-4DEE-90DB-F7E607233B12}"
+      DTS:To="Package\5 Toma las Fechas de Procesamiento" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{7E7B2DD8-34BA-4108-BE9F-4DC10983ABC6\} 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EF331A3C-1B97-4685-B286-8DF8BB313A70}"
+      DTS:From="Package\8 DTS Mora"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{7E7B2DD8-34BA-4108-BE9F-4DC10983ABC6} 1"
+      DTS:To="Package\z8 Error en carga Interfaz facturas"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{AF0CB009-E1A1-4CC3-AD6D-D09BF19ED673\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF0CB009-E1A1-4CC3-AD6D-D09BF19ED673}"
+      DTS:From="Package\6 Borrado de interfaz"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{AF0CB009-E1A1-4CC3-AD6D-D09BF19ED673}"
+      DTS:To="Package\7 Comienzo de ejecucion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{C963EA46-70AF-487D-AE88-28C21E4926C3\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{C963EA46-70AF-487D-AE88-28C21E4926C3}"
+      DTS:From="Package\9 carga DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{C963EA46-70AF-487D-AE88-28C21E4926C3}"
+      DTS:To="Package\z9 Error carga"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{E2D81C52-5875-4EEB-8EA7-3635EE50AA16\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{E2D81C52-5875-4EEB-8EA7-3635EE50AA16}"
+      DTS:From="Package\5 Toma las Fechas de Procesamiento"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{E2D81C52-5875-4EEB-8EA7-3635EE50AA16}"
+      DTS:To="Package\6 Borrado de interfaz" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\1 Control existencia archivo"
+          TopLeft="308.097484301565,21.3666666511695" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\10 Muevo archivo"
+          TopLeft="310.61320754717,615.858490566038" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\2 control ejecucion"
+          TopLeft="285.216981132075,106.594339622641" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\3 Elegir el Proceso_Key"
+          TopLeft="291.216981132075,172.858490566038" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\5 Toma las Fechas de Procesamiento"
+          TopLeft="252.216981132075,254.518867924528" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\6 Borrado de interfaz"
+          TopLeft="265.828092263882,323.179245283019" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\7 Comienzo de ejecucion"
+          TopLeft="269.216981132075,405.839622641509" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\8 DTS Mora"
+          TopLeft="309.603773584905,471" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\9 carga DW"
+          TopLeft="320.650943396226,548.623689701635" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\z1 Salida por control de procesos"
+          TopLeft="35.72641509434,17.2735849056604" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\z2 Falta registro dim dw procesos"
+          TopLeft="18,107" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\z8 Error en carga Interfaz facturas"
+          TopLeft="24,475.792452830189" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\z9 Error carga"
+          TopLeft="63.5,548.990566037736" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="407.716981132075,148.594339622641">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22,24.264150943397"
+              Start="0,0"
+              End="-22,16.764150943397">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.13207547169849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.13207547169849"
+                    Point2="0,12.1320754716985"
+                    Point3="-4,12.1320754716985" />
+                  <mssgle:LineSegment
+                    End="-18,12.1320754716985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18,12.1320754716985"
+                    Point2="-22,12.1320754716985"
+                    Point3="-22,16.1320754716985" />
+                  <mssgle:LineSegment
+                    End="-22,16.764150943397" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="410.15723271682,63.3666666511695">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.2276729714715"
+              Start="0,0"
+              End="0,35.7276729714715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7276729714715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.86383648573575,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="308.097484301565,40.8201257784149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-136.371069207225,0"
+              Start="0,0"
+              End="-128.871069207225,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-128.871069207225,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.4355346036125,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="367.216981132075,447.839622641509">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.38679245283004,23.160377358491"
+              Start="0,0"
+              End="9.38679245283004,15.660377358491">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.58018867924551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.58018867924551"
+                    Point2="0,11.5801886792455"
+                    Point3="4,11.5801886792455" />
+                  <mssgle:LineSegment
+                    End="5.38679245283004,11.5801886792455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.38679245283004,11.5801886792455"
+                    Point2="9.38679245283004,11.5801886792455"
+                    Point3="9.38679245283004,15.5801886792455" />
+                  <mssgle:LineSegment
+                    End="9.38679245283004,15.660377358491" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="389.632075471698,590.623689701635">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.2348008644029"
+              Start="0,0"
+              End="0,17.7348008644029">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7348008644029" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="376.603773584905,513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.047169811321,35.623689701635"
+              Start="0,0"
+              End="11.047169811321,28.123689701635">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8118448508175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8118448508175"
+                    Point2="0,17.8118448508175"
+                    Point3="4,17.8118448508175" />
+                  <mssgle:LineSegment
+                    End="7.047169811321,17.8118448508175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.047169811321,17.8118448508175"
+                    Point2="11.047169811321,17.8118448508175"
+                    Point3="11.047169811321,21.8118448508175" />
+                  <mssgle:LineSegment
+                    End="11.047169811321,28.123689701635" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 5]"
+          TopLeft="285.216981132075,127.797169811321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.216981132075,0"
+              Start="0,0"
+              End="-22.716981132075,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.716981132075,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.8871819722875,5,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{32339309-59BF-4DEE-90DB-F7E607233B12\}]"
+          TopLeft="382.466981132075,214.858490566038">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6603773584901"
+              Start="0,0"
+              End="0,32.1603773584901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1603773584901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{7E7B2DD8-34BA-4108-BE9F-4DC10983ABC6\} 1]"
+          TopLeft="309.603773584905,494.396226415094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44.603773584905,0"
+              Start="0,0"
+              End="-37.103773584905,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-37.103773584905,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.0805781987025,5,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{AF0CB009-E1A1-4CC3-AD6D-D09BF19ED673\}]"
+          TopLeft="355.328092263882,365.179245283019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.888888868193,40.66037735849"
+              Start="0,0"
+              End="11.888888868193,33.16037735849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.330188679245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.330188679245"
+                    Point2="0,20.330188679245"
+                    Point3="4,20.330188679245" />
+                  <mssgle:LineSegment
+                    End="7.88888886819296,20.330188679245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.88888886819296,20.330188679245"
+                    Point2="11.888888868193,20.330188679245"
+                    Point3="11.888888868193,24.330188679245" />
+                  <mssgle:LineSegment
+                    End="11.888888868193,33.16037735849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{C963EA46-70AF-487D-AE88-28C21E4926C3\}]"
+          TopLeft="320.650943396226,569.807127869685">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-112.150943396226,0"
+              Start="0,0"
+              End="-104.650943396226,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-104.650943396226,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-63.854163104363,5,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{E2D81C52-5875-4EEB-8EA7-3635EE50AA16\}]"
+          TopLeft="379.216981132075,296.518867924528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.888888868193,26.660377358491"
+              Start="0,0"
+              End="-23.888888868193,19.160377358491">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.33018867924548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.33018867924548"
+                    Point2="0,13.3301886792455"
+                    Point3="-4,13.3301886792455" />
+                  <mssgle:LineSegment
+                    End="-19.888888868193,13.3301886792455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.888888868193,13.3301886792455"
+                    Point2="-23.888888868193,13.3301886792455"
+                    Point3="-23.888888868193,17.3301886792455" />
+                  <mssgle:LineSegment
+                    End="-23.888888868193,19.160377358491" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\8 DTS Mora">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\8 DTS Mora\Destino de OLE DB"
+          TopLeft="174,273" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\8 DTS Mora\Columna derivada"
+          TopLeft="170,127" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\8 DTS Mora\Origen de archivo plano"
+          TopLeft="162,27" />
+        <EdgeLayout
+          Id="Package\8 DTS Mora.Paths[Salida de origen de archivo plano]"
+          TopLeft="254.75,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\8 DTS Mora.Paths[Salida de columna derivada]"
+          TopLeft="255,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,104"
+              Start="0,0"
+              End="0,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\8 DTS Mora\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1636 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/29/2022 4:42:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SISTEMAS07_FL"
+  DTS:CreatorName="FL-0\jsc"
+  DTS:DTSID="{4526932F-6478-46CE-B159-4C0283376362}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Dim_Rubros_XTAB"
+  DTS:PackageType="5"
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{C2C3A675-AED6-4C1A-8895-8617C9E5BA51}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DWPE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+      DTS:ObjectName="DWPE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Rubros Xtab]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BD1CA9C6-ED49-45B5-84AA-C3EF618EF97F}"
+      DTS:ObjectName="Rubros Xtab">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\FV-DATA-FL\Fuentes_PowerBI\Peisa\Maestros\PRD\Rubros_XTAB.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cuenta de mayor"
+              DTS:DTSID="{C1442A7B-548A-4013-B29B-9C6A2C9E1392}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Capítulo"
+              DTS:DTSID="{F0C3E075-FFF0-4C5B-B83A-2A64AB8361BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sección"
+              DTS:DTSID="{B9011A8A-AFE2-4832-9D1E-2BAF17E3A037}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rubro "
+              DTS:DTSID="{27D68EAE-A47B-4286-AD9B-B8E6C98C3457}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Subrubro"
+              DTS:DTSID="{32771CD6-BB6D-4992-895B-B67E87D03BFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Anexo gastos Final"
+              DTS:DTSID="{3C5650FC-0862-4CBA-AA10-DA6EB57719D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 6"
+              DTS:DTSID="{A71618BE-9D3A-40E8-824E-FE20F2DA9074}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 7"
+              DTS:DTSID="{965A5AC6-DDC5-4B9E-B6E7-756523FF049A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CB6F8057-54F7-4C4E-9B2F-E52CDF04EC10}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7BB42196-6E80-4B5A-BC8D-D1C5697BCE16}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Proceso">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1- control ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Elegir el Proceso_Key"
+      DTS:DTSID="{DA37D678-58F9-493C-A185-F48800148475}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1- control ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;declare @var int&#xA;SELECT @var=count(P.Proceso_key)&#xA;FROM dbo.DW_Procesos AS P &#xA;  WHERE p.Lote_Key  = 6 AND P.Estado_key = 0&#xA;&#xA;if @var &gt; 0&#xA; Print 'Success'&#xA;else&#xA; RAISERROR (N'No hay lotes a Procesar', 16, 1)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2- Elegir el Proceso_Key"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Elegir el Proceso_Key"
+      DTS:DTSID="{3A5BE1A9-E5B8-4207-A5A0-F5A048DD72BF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2- Elegir el Proceso_Key"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;SELECT     MIN(Proceso_key) AS Proceso&#xA;FROM dbo.DW_Procesos&#xA;WHERE lote_key = 6&#xA; AND Estado_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="Proceso" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\3- Control existencia archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Control de Lotes a Procesar"
+      DTS:DTSID="{6A822F51-B721-4F1C-94CE-6CA87FCF71C3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="3- Control existencia archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{438F849E-6442-4417-8296-3FF489CC7E41}"
+          SQLTask:SqlStatementSource="declare @result int&#xA;-- EXEC @result = master..xp_cmdshell 'dir \\FV-DATA-FL\Fuentes_PowerBI\Peisa\Maestros\PRD\Rubros_XTAB.xlsx', NO_OUTPUT&#xA;select @result&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Existe" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\4- borro dim rubros_xtab"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B6BEBA2B-8BCE-40A2-B4B2-33969F2920F4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="4- borro dim rubros_xtab"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="truncate table int_Rubros_XTAB" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\5- Comienzo de ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{5E22D0A7-6D47-409C-9C7D-F75562D38EA6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="5- Comienzo de ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;exec dbo.SP_Actualiza_Estado_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\6  dts"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{53CBD95F-AB73-49C2-89C8-7396294FD661}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="6  dts"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\6  dts\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada].Columns[Capítulo]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Capítulo"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Capítulo]" />
+                    <inputColumn
+                      refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada].Columns[Sección]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sección"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sección]" />
+                    <inputColumn
+                      refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada].Columns[Rubro ]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rubro "
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Rubro ]" />
+                    <inputColumn
+                      refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada].Columns[Anexo gastos Final]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Anexo gastos Final"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Anexo gastos Final]" />
+                    <inputColumn
+                      refId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada].Columns[Subrubro]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Subrubro"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Subrubro]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Capitulo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Capitulo]"
+                      name="Capitulo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,20,1252)#{Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Capítulo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)[Capítulo]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Seccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Seccion]"
+                      name="Seccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,20,1252)#{Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sección]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)[Sección]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Rubro]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Rubro]"
+                      name="Rubro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,40,1252)#{Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Rubro ]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,40,1252)[Rubro ]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Anexo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Anexo]"
+                      name="Anexo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,40,1252)#{Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Anexo gastos Final]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,40,1252)[Anexo gastos Final]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[subrubro]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[subrubro]"
+                      name="subrubro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,50,1252)#{Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Subrubro]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)Subrubro</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\6  dts\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6  dts\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\6  dts\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_Rubros_XTAB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\6  dts\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cuenta de mayor]"
+                      cachedDataType="decimal"
+                      cachedName="Cuenta de mayor"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cuenta_Mayor]"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cuenta de mayor]" />
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Capitulo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Capitulo"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Capitulo]"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Capitulo]" />
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Seccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Seccion"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Seccion]"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Seccion]" />
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rubro]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Rubro"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rubro]"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Rubro]" />
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Anexo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Anexo"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Anexos]"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[Anexo]" />
+                    <inputColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[subrubro]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="subrubro"
+                      externalMetadataColumnId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subrubro]"
+                      lineageId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada].Columns[subrubro]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cuenta_Mayor]"
+                      dataType="numeric"
+                      name="Cuenta_Mayor"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Capitulo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Capitulo" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Seccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Seccion" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rubro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Rubro" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subrubro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Subrubro" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Anexos]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Anexos" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\6  dts\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6  dts\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6  dts\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\6  dts\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\6  dts\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Rubros Xtab]"
+                  connectionManagerRefId="Package.ConnectionManagers[Rubros Xtab]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cuenta de mayor]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cuenta de mayor]"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cuenta de mayor]"
+                      name="Cuenta de mayor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Capítulo]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Capítulo]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Capítulo]"
+                      name="Capítulo"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sección]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sección]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sección]"
+                      name="Sección"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Rubro ]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Rubro ]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Rubro ]"
+                      name="Rubro "
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Subrubro]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Subrubro]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Subrubro]"
+                      name="Subrubro"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Anexo gastos Final]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Anexo gastos Final]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Anexo gastos Final]"
+                      name="Anexo gastos Final"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Columna 6]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 6]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Columna 6]"
+                      name="Columna 6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Columna 7]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 7]"
+                      length="50"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Columna 7]"
+                      name="Columna 7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cuenta de mayor]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Cuenta de mayor" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Capítulo]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Capítulo" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sección]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Sección" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Rubro ]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Rubro " />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Subrubro]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Subrubro" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Anexo gastos Final]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Anexo gastos Final" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 6]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Columna 6" />
+                    <externalMetadataColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Columna 7]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Columna 7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6  dts\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\6  dts.Paths[Salida de columna derivada]"
+              endId="Package\6  dts\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Salida de columna derivada"
+              startId="Package\6  dts\Columna derivada.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\6  dts.Paths[Salida de origen de archivo plano]"
+              endId="Package\6  dts\Columna derivada.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de archivo plano"
+              startId="Package\6  dts\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\7 Carga Dim_rubros xtab"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga Dim_Materiales"
+      DTS:DTSID="{ccef19f2-1b3c-4667-92d1-b75512d1afc5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="7 Carga Dim_rubros xtab"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="exec [dbo].[SP_Carga_Dim_Rubros_Xtab]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\8 Finaliza OK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Finaliza OK"
+      DTS:DTSID="{41c20147-498d-4980-96fe-8a24c2c3f313}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="8 Finaliza OK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z1 Falta registro dim dw procesos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{9E1E113E-F4A1-4AB4-B8B0-3C892B5396E0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z1 Falta registro dim dw procesos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="use DWPE&#xA;INSERT INTO DW_Procesos (Lote_key, Fecha_inicio_ejecucion, Fecha_fin_ejecucion, Estado_Key)&#xA;SELECT Lote_key, getdate() Fecha_inicio_ejecucion, getdate() Fecha_fin_ejecucion, 3 Estado_Key&#xA;FROM dbo.DW_Lotes&#xA;WHERE Lote_key = 6" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z13 SP_Carga_Dim_rubros xtab"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Finaliza en Error"
+      DTS:DTSID="{3af9f0fa-40b7-440d-854e-e3be784ec914}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z13 SP_Carga_Dim_rubros xtab"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B68CF491-E7FC-43E4-8C5A-B3EBA06099BC}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 4" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z3  Falta arch txt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{DF814545-4B49-49E7-8A84-0C3DC8898AB8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z3  Falta arch txt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;exec dbo.SP_Actualiza_Estado_Procesos ?, 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z6 fallo dts"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{B822E824-4365-437F-9BFB-FD5E8FC0CF23}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z6 fallo dts"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="use dwpe&#xA;exec dbo.SP_Actualiza_Estado_Procesos ?, 5" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{D90EACA7-F0F3-4612-86D0-1814C9691D1C}"
+      DTS:From="Package\4- borro dim rubros_xtab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\5- Comienzo de ejecucion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0F13BA36-BF66-4CB6-AD9E-B3DFB4725C7D}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe == 0"
+      DTS:From="Package\3- Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\4- borro dim rubros_xtab" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{b53df316-016b-4ecd-b5aa-347afeddfcc8}"
+      DTS:From="Package\7 Carga Dim_rubros xtab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 12"
+      DTS:To="Package\8 Finaliza OK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{21456498-e7e2-4537-b1f2-6c1d2fb86322}"
+      DTS:From="Package\7 Carga Dim_rubros xtab"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 13"
+      DTS:To="Package\z13 SP_Carga_Dim_rubros xtab"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{05B0EFD5-EE9C-47F4-A878-DFFC335006C8}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe &gt; 0"
+      DTS:From="Package\3- Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\z3  Falta arch txt" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C766B3AD-D436-4CA2-BCF4-46E710386BF2}"
+      DTS:From="Package\2- Elegir el Proceso_Key"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\3- Control existencia archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{1FD558B6-7997-4C07-A75F-A7CB0FA7120A}"
+      DTS:From="Package\5- Comienzo de ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\6  dts" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F7AF7F0-9B77-413B-B8CF-388E1671DF7A}"
+      DTS:From="Package\6  dts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 5"
+      DTS:To="Package\7 Carga Dim_rubros xtab" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{E280DAA3-76B6-43DE-82D4-98278FB690F5}"
+      DTS:From="Package\6  dts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 6"
+      DTS:To="Package\z6 fallo dts"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F11B726-1051-4E4F-AAA1-0768DAD271B7}"
+      DTS:From="Package\1- control ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 7"
+      DTS:To="Package\2- Elegir el Proceso_Key" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F5F7AA0-B1BB-4EDE-BA54-A94924702134}"
+      DTS:From="Package\1- control ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 8"
+      DTS:To="Package\z1 Falta registro dim dw procesos"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\1- control ejecucion"
+          TopLeft="308,31" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\2- Elegir el Proceso_Key"
+          TopLeft="310,97" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\3- Control existencia archivo"
+          TopLeft="307,164" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\4- borro dim rubros_xtab"
+          TopLeft="318,235" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\5- Comienzo de ejecucion"
+          TopLeft="310,300" />
+        <NodeLayout
+          Size="106,42"
+          Id="Package\6  dts"
+          TopLeft="360,367" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\7 Carga Dim_rubros xtab"
+          TopLeft="322.5,437" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\8 Finaliza OK"
+          TopLeft="343.754716981132,509.84905660377" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\z1 Falta registro dim dw procesos"
+          TopLeft="77,33" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\z13 SP_Carga_Dim_rubros xtab"
+          TopLeft="16,427.349056603774" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\z3  Falta arch txt"
+          TopLeft="70,161" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\z6 fallo dts"
+          TopLeft="65,351" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="413.25,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="415,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 12]"
+          TopLeft="417.377358490566,479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.8490566037699"
+              Start="0,0"
+              End="0,23.3490566037699">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3490566037699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 13]"
+          TopLeft="322.5,458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.5,-9.65094339622601"
+              Start="0,0"
+              End="-71,-9.65094339622601">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-35.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.25,0"
+                    Point2="-39.25,0"
+                    Point3="-39.25,-4" />
+                  <mssgle:LineSegment
+                    End="-39.25,-5.65094339622601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.25,-5.65094339622601"
+                    Point2="-39.25,-9.65094339622601"
+                    Point3="-43.25,-9.65094339622601" />
+                  <mssgle:LineSegment
+                    End="-71,-9.65094339622601" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-50.77869140625,1,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="307,183.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,0"
+              Start="0,0"
+              End="-65.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-65.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-40.75,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="410,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="411.5,342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 5]"
+          TopLeft="413,409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,28"
+              Start="0,0"
+              End="8,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="4,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,14"
+                    Point2="8,14"
+                    Point3="8,18" />
+                  <mssgle:LineSegment
+                    End="8,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 6]"
+          TopLeft="360,388">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-165,-16"
+              Start="0,0"
+              End="-157.5,-16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-78.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.5,0"
+                    Point2="-82.5,0"
+                    Point3="-82.5,-4" />
+                  <mssgle:LineSegment
+                    End="-82.5,-12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-82.5,-12"
+                    Point2="-82.5,-16"
+                    Point3="-86.5,-16" />
+                  <mssgle:LineSegment
+                    End="-157.5,-16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.02869140625,1,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 7]"
+          TopLeft="394,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,24"
+              Start="0,0"
+              End="12.5,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="4,12" />
+                  <mssgle:LineSegment
+                    End="8.5,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,12"
+                    Point2="12.5,12"
+                    Point3="12.5,16" />
+                  <mssgle:LineSegment
+                    End="12.5,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 8]"
+          TopLeft="308,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35,0"
+              Start="0,0"
+              End="-27.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-27.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.27869140625,5,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\6  dts">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\6  dts\OLE DB Destination"
+          TopLeft="213,295.584905660377" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\6  dts\Origen de archivo plano"
+          TopLeft="207,38" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\6  dts\Columna derivada"
+          TopLeft="215,148" />
+        <EdgeLayout
+          Id="Package\6  dts.Paths[Salida de origen de archivo plano]"
+          TopLeft="299.75,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\6  dts.Paths[Salida de columna derivada]"
+          TopLeft="297.75,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,105.584905660377"
+              Start="0,0"
+              End="0,98.084905660377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.084905660377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\6  dts\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

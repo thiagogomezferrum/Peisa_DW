@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DWPE"
+  DTS:DTSID="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=DWPE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-{6D79D3E8-6134-46A0-8F08-E983555E8C6B}pei-sql2019-vr.colonia.peisa.com.ar.DWPE;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
