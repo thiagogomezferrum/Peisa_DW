@@ -5,6 +5,8 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
       DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=STA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Fv_Migración-{58ABA66D-CC59-46DB-8416-34312B29E27F}FV-DW-SQL2017.DW_Comercial;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

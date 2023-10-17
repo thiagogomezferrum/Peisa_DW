@@ -1,0 +1,988 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2023 11:52:51 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VM-DESABD-VR"
+  DTS:CreatorName="FERRUM\etl"
+  DTS:DTSID="{F81044F5-198A-4513-8846-A4750DD1EB6F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{0FD15466-15C1-4D61-BFB3-F8E4B3634C08}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\sd_cab_pedidos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{39E6BC40-9D57-49AF-9218-E362FEC38A79}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="sd_cab_pedidos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\sd_cab_pedidos\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_cab_pedidos\Flat File Source.Connections[FlatFileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\sd_cab_pedidos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_sd_cab_pedidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_cab_pedidos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="NUMERO_DE_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DE_DOCUMENTO]"
+                      dataType="wstr"
+                      length="10"
+                      name="TIPO_DE_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CLASE_DE_DOCUMENTO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CLASE_DE_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CLIENTE]"
+                      dataType="wstr"
+                      length="50"
+                      name="CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORGANIZ_VTAS]"
+                      dataType="wstr"
+                      length="10"
+                      name="ORGANIZ_VTAS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SECTOR]"
+                      dataType="wstr"
+                      length="10"
+                      name="SECTOR" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONEDA]"
+                      dataType="wstr"
+                      length="10"
+                      name="MONEDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IMPORTE_NETO]"
+                      dataType="wstr"
+                      length="50"
+                      name="IMPORTE_NETO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PREF_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_PREF_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LISTA_DE_PRECIOS]"
+                      dataType="wstr"
+                      length="10"
+                      name="LISTA_DE_PRECIOS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COND_DE_PAGO]"
+                      dataType="wstr"
+                      length="10"
+                      name="COND_DE_PAGO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDEN_DE_COMPRA]"
+                      dataType="wstr"
+                      length="50"
+                      name="ORDEN_DE_COMPRA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINATARIO]"
+                      dataType="wstr"
+                      length="10"
+                      name="DESTINATARIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VENDEDOR]"
+                      dataType="wstr"
+                      length="50"
+                      name="VENDEDOR" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MOTIVO_DEL_PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="MOTIVO_DEL_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COD_STATUS_CREDITO]"
+                      dataType="wstr"
+                      length="50"
+                      name="COD_STATUS_CREDITO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_CREDITO]"
+                      dataType="wstr"
+                      length="50"
+                      name="STATUS_CREDITO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COD_STATUS_RECHAZO]"
+                      dataType="wstr"
+                      length="50"
+                      name="COD_STATUS_RECHAZO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS_RECHAZO]"
+                      dataType="wstr"
+                      length="50"
+                      name="STATUS_RECHAZO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COD_BLOQUEO_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="COD_BLOQUEO_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BLOQUEO_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="BLOQUEO_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COD_BLOQUEO_FACTURA]"
+                      dataType="wstr"
+                      length="50"
+                      name="COD_BLOQUEO_FACTURA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BLOQUEO_FACTURA]"
+                      dataType="wstr"
+                      length="50"
+                      name="BLOQUEO_FACTURA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INICIO_VIGENCIA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_INICIO_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_FIN_VIGENCIA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_FIN_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INCONTERMS]"
+                      dataType="wstr"
+                      length="50"
+                      name="INCONTERMS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPRESOR_RETIRA]"
+                      dataType="wstr"
+                      length="100"
+                      name="EXPRESOR_RETIRA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_ULT_MOD]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_ULT_MOD" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_DE_BAJA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_DE_BAJA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SUCURSAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="SUCURSAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PEDIDO_ORIGEN]"
+                      dataType="wstr"
+                      length="50"
+                      name="PEDIDO_ORIGEN" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OFICINA_DE_VENTAS]"
+                      dataType="wstr"
+                      length="50"
+                      name="OFICINA_DE_VENTAS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ENTREGA_COMPLETA_POR_PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="ENTREGA_COMPLETA_POR_PEDIDO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\sd_cab_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_cab_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\sd_cab_pedidos.Paths[Flat File Source Output]"
+              endId="Package\sd_cab_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\sd_cab_pedidos\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\sd_pos_pedidos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{10e92611-c60e-4b96-993c-1499c278337f}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="sd_pos_pedidos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\sd_pos_pedidos\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_pos_pedidos\Flat File Source.Connections[FlatFileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\sd_pos_pedidos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_sd_pos_pedidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_pos_pedidos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_PEDIDO]"
+                      dataType="wstr"
+                      length="10"
+                      name="NUMERO_DE_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MATERIAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="MATERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UNIDAD_DE_MEDIDA]"
+                      dataType="wstr"
+                      length="50"
+                      name="UNIDAD_DE_MEDIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONEDA]"
+                      dataType="wstr"
+                      length="10"
+                      name="MONEDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IMPORTE_NETO]"
+                      dataType="r8"
+                      name="IMPORTE_NETO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JERARQUIA]"
+                      dataType="wstr"
+                      length="50"
+                      name="JERARQUIA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GRUPO_MATERIAL_1]"
+                      dataType="wstr"
+                      length="10"
+                      name="GRUPO_MATERIAL_1" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION]"
+                      dataType="i4"
+                      name="POSICION" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD_PEDIDA]"
+                      dataType="i4"
+                      name="CANTIDAD_PEDIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MOTIVO_DE_RECHAZO]"
+                      dataType="wstr"
+                      length="50"
+                      name="MOTIVO_DE_RECHAZO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PREF_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_PREF_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DOCUMENTO_MODELO]"
+                      dataType="wstr"
+                      length="50"
+                      name="DOCUMENTO_MODELO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POS_DOC_MODELO]"
+                      dataType="wstr"
+                      length="10"
+                      name="POS_DOC_MODELO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DOC_MODELO]"
+                      dataType="wstr"
+                      length="10"
+                      name="TIPO_DOC_MODELO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINO_FINAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESTINO_FINAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DE_CAMBIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="TIPO_DE_CAMBIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CENTRO_POSICION]"
+                      dataType="wstr"
+                      length="50"
+                      name="CENTRO_POSICION" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RUTA]"
+                      dataType="wstr"
+                      length="50"
+                      name="RUTA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD_ANULADA]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD_ANULADA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRECIO_UNITARIO_LISTA]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRECIO_UNITARIO_LISTA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRECIO_UNITARIO_NETO]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRECIO_UNITARIO_NETO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DESCUENTO_OB_ST]"
+                      dataType="wstr"
+                      length="50"
+                      name="TIPO_DESCUENTO_OB_ST" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCUENTO_OBRA_STOCK]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESCUENTO_OBRA_STOCK" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCUENTO_PENALIDAD_DEV]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESCUENTO_PENALIDAD_DEV" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_FUTURA_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_FUTURA_2" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCUENTO_CAJA]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESCUENTO_CAJA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_CLIENTE]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_CATEGORIA]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_CATEGORIA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_EXCEPCIONAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_EXCEPCIONAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_MATRIZ]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_MATRIZ" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BONIFICACION_COMBO]"
+                      dataType="wstr"
+                      length="50"
+                      name="BONIFICACION_COMBO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD_DESPACHADA]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD_DESPACHADA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD_CONFIRMADA]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD_CONFIRMADA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD_EN_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD_EN_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEPOSITO]"
+                      dataType="wstr"
+                      length="50"
+                      name="DEPOSITO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\sd_pos_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_pos_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\sd_pos_pedidos.Paths[Flat File Source Output]"
+              endId="Package\sd_pos_pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\sd_pos_pedidos\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0C915787-5102-4D81-B344-9B8856A9D9D0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="truncate table Int_sd_cab_pedidos;&#xA;truncate table Int_sd_pos_pedidos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{579B1CA3-3857-47D4-B030-90A182446BD7}"
+      DTS:From="Package\truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\sd_cab_pedidos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5FE89847-90DC-4263-B3F3-65EAE2729C16}"
+      DTS:From="Package\sd_cab_pedidos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\sd_pos_pedidos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\sd_cab_pedidos"
+          TopLeft="145.624997830018,156.000002936313" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\sd_pos_pedidos"
+          TopLeft="134.999997988343,237.456142887955" />
+        <NodeLayout
+          Size="118.666666666667,42.6666666666667"
+          Id="Package\truncate"
+          TopLeft="156.87499766238,65.6842117626581" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="216.208330995714,108.350878429325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.08333350097138,47.6491245069884"
+              Start="0,0"
+              End="8.08333350097138,40.1491245069884">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8245622534942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8245622534942"
+                    Point2="0,23.8245622534942"
+                    Point3="4,23.8245622534942" />
+                  <mssgle:LineSegment
+                    End="4.08333350097138,23.8245622534942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.08333350097138,23.8245622534942"
+                    Point2="8.08333350097138,23.8245622534942"
+                    Point3="8.08333350097138,27.8245622534942" />
+                  <mssgle:LineSegment
+                    End="8.08333350097138,40.1491245069884" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.291664496685,198.66666960298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.6249998416752,38.7894732849753"
+              Start="0,0"
+              End="-10.6249998416752,31.2894732849753">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3947366424877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3947366424877"
+                    Point2="0,19.3947366424877"
+                    Point3="-4,19.3947366424877" />
+                  <mssgle:LineSegment
+                    End="-6.62499984167522,19.3947366424877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.62499984167522,19.3947366424877"
+                    Point2="-10.6249998416752,19.3947366424877"
+                    Point3="-10.6249998416752,23.3947366424877" />
+                  <mssgle:LineSegment
+                    End="-10.6249998416752,31.2894732849753" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\sd_cab_pedidos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\sd_cab_pedidos\OLE DB Destination"
+          TopLeft="324.999995157123,171.736845337783" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\sd_cab_pedidos\Flat File Source"
+          TopLeft="88.1249986868352,156.684213475507" />
+        <EdgeLayout
+          Id="Package\sd_cab_pedidos.Paths[Flat File Source Output]"
+          TopLeft="242.791665353502,178.017546808841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.2083298036208,15.0526318622759"
+              Start="0,0"
+              End="74.7083298036208,15.0526318622759">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.1041649018104,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.1041649018104,0"
+                    Point2="41.1041649018104,0"
+                    Point3="41.1041649018104,4" />
+                  <mssgle:LineSegment
+                    End="41.1041649018104,11.0526318622759" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.1041649018104,11.0526318622759"
+                    Point2="41.1041649018104,15.0526318622759"
+                    Point3="45.1041649018104,15.0526318622759" />
+                  <mssgle:LineSegment
+                    End="74.7083298036208,15.0526318622759" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\sd_cab_pedidos\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\sd_pos_pedidos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\sd_pos_pedidos\Flat File Source"
+          TopLeft="88.1249986868352,156.684213475507" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\sd_pos_pedidos\OLE DB Destination"
+          TopLeft="324.999995157123,171.736845337783" />
+        <EdgeLayout
+          Id="Package\sd_pos_pedidos.Paths[Flat File Source Output]"
+          TopLeft="242.791665353502,178.01754680884">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.2083298036212,15.052631862276"
+              Start="0,0"
+              End="74.7083298036212,15.052631862276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.1041649018106,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.1041649018106,0"
+                    Point2="41.1041649018106,0"
+                    Point3="41.1041649018106,4" />
+                  <mssgle:LineSegment
+                    End="41.1041649018106,11.052631862276" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.1041649018106,11.052631862276"
+                    Point2="41.1041649018106,15.052631862276"
+                    Point3="45.1041649018106,15.052631862276" />
+                  <mssgle:LineSegment
+                    End="74.7083298036212,15.052631862276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\sd_pos_pedidos\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

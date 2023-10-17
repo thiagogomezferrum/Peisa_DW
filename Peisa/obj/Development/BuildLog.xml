@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Transferencias</Name>
-    <LastWriteTime>2023-07-24T13:37:16.1999706Z</LastWriteTime>
+    <LastWriteTime>2023-10-11T19:24:51.5170036Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -53,7 +53,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Indices.dtsx</Name>
-      <LastWriteTime>2022-11-30T15:52:29.9983889Z</LastWriteTime>
+      <LastWriteTime>2023-09-19T19:08:20Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -83,7 +83,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Facturas_FI.dtsx</Name>
-      <LastWriteTime>2023-01-10T14:52:40.867731Z</LastWriteTime>
+      <LastWriteTime>2023-10-12T17:16:21.3763684Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -99,6 +99,21 @@
     <ProjectBuildItemInfo>
       <Name>Fact_Cta_Cte.dtsx</Name>
       <LastWriteTime>2023-02-16T16:55:57.5480247Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Pedidos.dtsx</Name>
+      <LastWriteTime>2023-10-11T19:24:51.391993Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Facturas.dtsx</Name>
+      <LastWriteTime>2023-10-11T14:06:38.0247501Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Entregas.dtsx</Name>
+      <LastWriteTime>2023-10-12T17:16:21.4313665Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

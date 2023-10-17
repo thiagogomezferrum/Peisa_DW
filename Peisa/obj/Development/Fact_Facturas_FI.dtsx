@@ -7,11 +7,11 @@
   DTS:CreatorName="FL-0\Administrador"
   DTS:DTSID="{253C5B43-47F1-4391-8C44-CD17BED3540A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="11274"
   DTS:ObjectName="Fact_Facturas_FI"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{BED08853-13ED-4827-95D3-C4904957BF45}">
+  DTS:VersionBuild="143"
+  DTS:VersionGUID="{11DA29DC-8CAB-40BB-B971-4EC6F69B5697}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,6 +22,8 @@
       DTS:ObjectName="DWPE">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -415,7 +417,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="10 carga DW"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -438,7 +440,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="10 Muevo archivo"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -689,7 +691,7 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -1430,7 +1432,7 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -2341,7 +2343,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="z1 Salida por control de procesos"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2358,7 +2360,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="z2 Falta registro dim dw procesos"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2406,7 +2408,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="z9 Error carga"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2430,7 +2432,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="z9 Error en carga Interfaz pagos"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2569,55 +2571,55 @@
       DTS:To="Package\6 Borrado de interfaz" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\1 Control existencia archivo"
           TopLeft="308.097484301565,21.3666666511695" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\10 carga DW"
           TopLeft="321.650943396226,644.623689701635" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\10 Muevo archivo"
           TopLeft="311.61320754717,711.858490566038" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\2 control ejecucion"
           TopLeft="285.216981132075,106.594339622641" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\3 Elegir el Proceso_Key"
           TopLeft="291.216981132075,172.858490566038" />
         <NodeLayout
-          Size="254,42"
+          Size="254.4,41.6"
           Id="Package\5 Toma las Fechas de Procesamiento"
           TopLeft="252.216981132075,254.518867924528" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\6 Borrado de interfaz"
           TopLeft="265.828092263882,323.179245283019" />
         <NodeLayout
-          Size="196,42"
+          Size="196,41.6"
           Id="Package\7 Comienzo de ejecucion"
           TopLeft="269.216981132075,405.839622641509" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\8 DTS facturas Cab"
           TopLeft="309.603773584905,471" />
         <NodeLayout
-          Size="172,42"
+          Size="172,41.6"
           Id="Package\9 DTS factturas Det"
           TopLeft="319.216981132075,544.5" />
         <NodeLayout
@@ -2625,19 +2627,19 @@
           Id="Package\z1 Salida por control de procesos"
           TopLeft="31.72641509434,25.2735849056604" />
         <NodeLayout
-          Size="237,42"
+          Size="236.8,41.6"
           Id="Package\z2 Falta registro dim dw procesos"
           TopLeft="18,107" />
         <NodeLayout
-          Size="241,42"
+          Size="240.8,41.6"
           Id="Package\z8 Error en carga Interfaz facturas"
           TopLeft="24,475.792452830189" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\z9 Error carga"
           TopLeft="64.5,644.990566037736" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\z9 Error en carga Interfaz pagos"
           TopLeft="37.61320754717,553.292452830189" />
         <EdgeLayout
@@ -2676,31 +2678,31 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="410.15723271682,63.3666666511695">
+          TopLeft="410.05723271682,62.9666666511695">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.2276729714715"
+              EndConnector="0,43.6276729714715"
               Start="0,0"
-              End="0,35.7276729714715">
+              End="0,36.1276729714715">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.7276729714715" />
+                    End="0,36.1276729714715" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,9.86383648573575,16,16"
+              BoundingBox="-8,10.0638364857357,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="308.097484301565,44.8201257784149">
+          TopLeft="308.097484301565,44.720125778415">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2798,7 +2800,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-22.8871819722875,5,23.0573828125,9.421875"
+              BoundingBox="-22.8871819722875,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2924,7 +2926,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-63.854163104363,5,23.0573828125,9.421875"
+              BoundingBox="-63.854163104363,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2960,7 +2962,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-36.3305781987025,-15.421875,23.0573828125,9.421875"
+              BoundingBox="-36.3305781987025,-15.421875,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2984,7 +2986,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-30.0805781987025,5,23.0573828125,9.421875"
+              BoundingBox="-30.0805781987025,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3051,41 +3053,19 @@
     design-time-name="Package\8 DTS facturas Cab">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="131,42"
-          Id="Package\8 DTS facturas Cab\FI_CAB_FC"
-          TopLeft="244,21" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168,42"
           Id="Package\8 DTS facturas Cab\Destino de OLE DB"
           TopLeft="236,203" />
         <NodeLayout
+          Size="131,42"
+          Id="Package\8 DTS facturas Cab\FI_CAB_FC"
+          TopLeft="244,21" />
+        <NodeLayout
           Size="164,42"
           Id="Package\8 DTS facturas Cab\Columna derivada"
           TopLeft="233,115" />
-        <EdgeLayout
-          Id="Package\8 DTS facturas Cab.Paths[Salida de columna derivada]"
-          TopLeft="317.5,157">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\8 DTS facturas Cab.Paths[Salida de origen de archivo plano]"
           TopLeft="312.25,63">
@@ -3105,7 +3085,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\8 DTS facturas Cab.Paths[Salida de columna derivada]"
+          TopLeft="317.5,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3128,7 +3134,7 @@
     design-time-name="Package\9 DTS factturas Det">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168,42"
           Id="Package\9 DTS factturas Det\Destino de OLE DB"
@@ -3141,28 +3147,6 @@
           Size="164,42"
           Id="Package\9 DTS factturas Det\Columna derivada"
           TopLeft="134,156" />
-        <EdgeLayout
-          Id="Package\9 DTS factturas Det.Paths[Salida de columna derivada]"
-          TopLeft="216.5,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\9 DTS factturas Det.Paths[Salida de origen de archivo plano]"
           TopLeft="218.75,110">
@@ -3182,7 +3166,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\9 DTS factturas Det.Paths[Salida de columna derivada]"
+          TopLeft="216.5,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

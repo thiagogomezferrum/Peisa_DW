@@ -1,0 +1,2310 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/11/2023 11:35:07 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VM-DESABD-VR"
+  DTS:CreatorName="FERRUM\etl"
+  DTS:DTSID="{9150AECD-E0D1-4D5C-A790-A31EA3901B41}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{9EE6C5A4-EE72-4A70-8D8E-374ADF035D70}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sd_cab_entregas]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{78388653-2EBE-47BF-9CC6-5E600B45C524}"
+      DTS:ObjectName="sd_cab_entregas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sapfs.fl-0.fv.com.ar\SAPDW\PEISA\ECP\sd_cab_entregas.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FECHA SALIDA"
+              DTS:DTSID="{97AC3FFE-72BE-465E-A82A-4CAE5D2AE361}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NÃšMERO DE ENTREGA"
+              DTS:DTSID="{338D5793-4B57-44B4-84A4-4A321E98AC8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOLICITANTE"
+              DTS:DTSID="{0239B36E-9A9A-40C8-8C29-25E45D8EE552}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESTINATARIO"
+              DTS:DTSID="{651E4C7F-CBBB-4D3A-A3DF-179DF7A459B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NRO  TRANSPORTE"
+              DTS:DTSID="{5699A138-A024-4C56-94F1-7B99F9041118}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FECHA PICKING"
+              DTS:DTSID="{504C199A-2827-4942-A8AD-E1D6D398FD88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FECHA ENTREGA"
+              DTS:DTSID="{6638E881-01D6-4B24-AA2E-1E64D2AF08F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORGANIZ  VENTAS"
+              DTS:DTSID="{F6EE22DC-8066-4D89-963C-D02AC4D03470}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PUESTO DE EXPEDICIÃ“N"
+              DTS:DTSID="{2BBE18F5-C0D1-4F80-BBDD-B77E062D6AB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLASE DE ENTREGA"
+              DTS:DTSID="{DFED4CA9-996D-47C1-A844-EC1B8BD0C3AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO DE DOCUMENTO"
+              DTS:DTSID="{8190CE1E-53A6-4305-BA4C-93FFD663EF1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NÂ° REMITO"
+              DTS:DTSID="{13795408-283F-4175-A60F-1F3BBD0ED030}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sd_pos_entregas]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1212C24C-7436-45DD-958F-95691A9D2D9A}"
+      DTS:ObjectName="sd_pos_entregas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sapfs.fl-0.fv.com.ar\SAPDW\PEISA\ECP\sd_pos_entregas.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NÃšMERO DE ENTREGA"
+              DTS:DTSID="{064CCE0B-45FD-4237-8BC6-DA0E5F16B70F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POSICIÃ“N"
+              DTS:DTSID="{90C3F991-EC71-4D4F-B01E-71AA4CC8B335}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MATERIAL"
+              DTS:DTSID="{94BC1C7A-862B-4CF0-B185-96F9074DFAB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UNIDAD DE MEDIDA"
+              DTS:DTSID="{ED9D0ACA-5A3C-4DC6-B0E8-0BC4763885B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CANTIDAD"
+              DTS:DTSID="{B6786F4C-DCC0-4E46-8624-D4F0CFC272C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PEDIDO"
+              DTS:DTSID="{D493B49F-6678-42B4-8584-FD220850C467}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POSICIÃ“N2"
+              DTS:DTSID="{4B3293B6-4984-48F1-A48B-98CAB32C1C3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PEDIDO PROPIO"
+              DTS:DTSID="{6ADEFE61-7126-412C-9589-12C609765B33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POSICIÃ“N PROPIO"
+              DTS:DTSID="{3B4EBB90-E5AF-4F10-A1DB-5A08EBFDD7E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESTINO FINAL"
+              DTS:DTSID="{76ACAB53-FE50-4A12-A39C-A22458CA9F31}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6766DA16-294F-4A3D-8F9C-15E17934F404}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F59678C8-F26E-4536-A425-F4272DAAB8F7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Proceso">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1 Control existencia archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Control de Lotes a Procesar"
+      DTS:DTSID="{3de13441-184f-496e-8005-6ac010053a59}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1 Control existencia archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{438F849E-6442-4417-8296-3FF489CC7E41}"
+          SQLTask:SqlStatementSource="declare @result int&#xA;-- EXEC @result = master..xp_cmdshell 'dir \\SAPFS\DWSAP\Peisa\ECP\sd_cab_entregas.txt', NO_OUTPUT&#xA;select @result&#xA;&#xA;-- EXEC @result = master..xp_cmdshell 'dir \\SAPFS\DWSAP\Peisa\ECP\sd_pos_entregas.txt', NO_OUTPUT&#xA;select @result&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Existe" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2 Elegir el Proceso_key"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Elegir el Proceso_key"
+      DTS:DTSID="{44470922-5792-4bdc-b5f2-c7cff7218739}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2 Elegir el Proceso_key"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="SELECT     MIN(Proceso_key) AS Proceso&#xA;FROM         DW_Procesos &#xA;where&#xA;Lote_Key = 12 and&#xA;Estado_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="Proceso" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\4 Comienzo de ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{c84d1593-3c5b-4725-be5c-051caf49731f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="4 Comienzo de ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\8 Finaliza OK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Finaliza OK"
+      DTS:DTSID="{9ef5dd75-57e1-411a-8305-1dc1e3db1d01}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="8 Finaliza OK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\sd_cab_entregas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ec4ee703-e566-4369-964b-5a316fe83218}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="sd_cab_entregas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\sd_cab_entregas\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_cab_entregas\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sd_cab_entregas]"
+                  connectionManagerRefId="Package.ConnectionManagers[sd_cab_entregas]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[TIPO DE DOCUMENTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TIPO DE DOCUMENTO]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[TIPO DE DOCUMENTO]"
+                      name="TIPO DE DOCUMENTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA SALIDA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA SALIDA]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA SALIDA]"
+                      name="FECHA SALIDA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÃšMERO DE ENTREGA]"
+                      length="100"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]"
+                      name="NÃšMERO DE ENTREGA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[SOLICITANTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SOLICITANTE]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[SOLICITANTE]"
+                      name="SOLICITANTE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINATARIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESTINATARIO]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINATARIO]"
+                      name="DESTINATARIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NRO  TRANSPORTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NRO  TRANSPORTE]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NRO  TRANSPORTE]"
+                      name="NRO  TRANSPORTE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA PICKING]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA PICKING]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA PICKING]"
+                      name="FECHA PICKING"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA ENTREGA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA ENTREGA]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA ENTREGA]"
+                      name="FECHA ENTREGA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZ  VENTAS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORGANIZ  VENTAS]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZ  VENTAS]"
+                      name="ORGANIZ  VENTAS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PUESTO DE EXPEDICIÃ“N]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PUESTO DE EXPEDICIÃ“N]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PUESTO DE EXPEDICIÃ“N]"
+                      name="PUESTO DE EXPEDICIÃ“N"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CLASE DE ENTREGA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CLASE DE ENTREGA]"
+                      length="50"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CLASE DE ENTREGA]"
+                      name="CLASE DE ENTREGA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÂ° REMITO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÂ° REMITO]"
+                      length="100"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÂ° REMITO]"
+                      name="NÂ° REMITO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TIPO DE DOCUMENTO]"
+                      dataType="wstr"
+                      length="50"
+                      name="TIPO DE DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA SALIDA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA SALIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÃšMERO DE ENTREGA]"
+                      dataType="wstr"
+                      length="100"
+                      name="NÃšMERO DE ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SOLICITANTE]"
+                      dataType="wstr"
+                      length="50"
+                      name="SOLICITANTE" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESTINATARIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESTINATARIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NRO  TRANSPORTE]"
+                      dataType="wstr"
+                      length="50"
+                      name="NRO  TRANSPORTE" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA PICKING]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA PICKING" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FECHA ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORGANIZ  VENTAS]"
+                      dataType="wstr"
+                      length="50"
+                      name="ORGANIZ  VENTAS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PUESTO DE EXPEDICIÃ“N]"
+                      dataType="wstr"
+                      length="50"
+                      name="PUESTO DE EXPEDICIÃ“N" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CLASE DE ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="CLASE DE ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÂ° REMITO]"
+                      dataType="wstr"
+                      length="100"
+                      name="NÂ° REMITO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\sd_cab_entregas\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_sd_cab_entregas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_cab_entregas\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOLICITANTE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SOLICITANTE"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOLICITANTE]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[SOLICITANTE]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESTINATARIO]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DESTINATARIO"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINATARIO]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINATARIO]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FECHA SALIDA]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FECHA SALIDA"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_SALIDA]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA SALIDA]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NÃšMERO DE ENTREGA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="NÃšMERO DE ENTREGA"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_ENTREGA]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FECHA PICKING]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FECHA PICKING"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PICKING]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA PICKING]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FECHA ENTREGA]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FECHA ENTREGA"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_ENTREGA]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[FECHA ENTREGA]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NÂ° REMITO]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="NÂ° REMITO"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NRO_REMITO]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÂ° REMITO]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TIPO DE DOCUMENTO]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TIPO DE DOCUMENTO"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DE_DOCUMENTO]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[TIPO DE DOCUMENTO]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CLASE DE ENTREGA]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CLASE DE ENTREGA"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CLASE_DE_ENTREGA]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CLASE DE ENTREGA]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PUESTO DE EXPEDICIÃ“N]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PUESTO DE EXPEDICIÃ“N"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PUESTO_DE_EXPEDICION]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PUESTO DE EXPEDICIÃ“N]" />
+                    <inputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORGANIZ  VENTAS]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ORGANIZ  VENTAS"
+                      externalMetadataColumnId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORGANIZ_VENTAS]"
+                      lineageId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZ  VENTAS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_SALIDA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_SALIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="NUMERO_DE_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOLICITANTE]"
+                      dataType="wstr"
+                      length="50"
+                      name="SOLICITANTE" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINATARIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESTINATARIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PICKING]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_PICKING" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="FECHA_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORGANIZ_VENTAS]"
+                      dataType="wstr"
+                      length="10"
+                      name="ORGANIZ_VENTAS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PUESTO_DE_EXPEDICION]"
+                      dataType="wstr"
+                      length="10"
+                      name="PUESTO_DE_EXPEDICION" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CLASE_DE_ENTREGA]"
+                      dataType="wstr"
+                      length="10"
+                      name="CLASE_DE_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DE_DOCUMENTO]"
+                      dataType="wstr"
+                      length="10"
+                      name="TIPO_DE_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NRO_REMITO]"
+                      dataType="wstr"
+                      length="50"
+                      name="NRO_REMITO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\sd_cab_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_cab_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_cab_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\sd_cab_entregas.Paths[Flat File Source Output]"
+              endId="Package\sd_cab_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\sd_cab_entregas\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\sd_pos_entregas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{decb83e8-2cc6-47fd-8085-6c35ce0dde55}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="sd_pos_entregas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\sd_pos_entregas\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_pos_entregas\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sd_pos_entregas]"
+                  connectionManagerRefId="Package.ConnectionManagers[sd_pos_entregas]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N]"
+                      name="POSICIÃ“N"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[MATERIAL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MATERIAL]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[MATERIAL]"
+                      name="MATERIAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[UNIDAD DE MEDIDA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UNIDAD DE MEDIDA]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[UNIDAD DE MEDIDA]"
+                      name="UNIDAD DE MEDIDA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PEDIDO]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO]"
+                      name="PEDIDO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N2]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N2]"
+                      name="POSICIÃ“N2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÃšMERO DE ENTREGA]"
+                      length="100"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]"
+                      name="NÃšMERO DE ENTREGA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CANTIDAD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CANTIDAD]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CANTIDAD]"
+                      name="CANTIDAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO PROPIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PEDIDO PROPIO]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO PROPIO]"
+                      name="PEDIDO PROPIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N PROPIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N PROPIO]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N PROPIO]"
+                      name="POSICIÃ“N PROPIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINO FINAL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESTINO FINAL]"
+                      length="50"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINO FINAL]"
+                      name="DESTINO FINAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N]"
+                      dataType="wstr"
+                      length="50"
+                      name="POSICIÃ“N" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MATERIAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="MATERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UNIDAD DE MEDIDA]"
+                      dataType="wstr"
+                      length="50"
+                      name="UNIDAD DE MEDIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N2]"
+                      dataType="wstr"
+                      length="50"
+                      name="POSICIÃ“N2" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NÃšMERO DE ENTREGA]"
+                      dataType="wstr"
+                      length="100"
+                      name="NÃšMERO DE ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CANTIDAD]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PEDIDO PROPIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="PEDIDO PROPIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSICIÃ“N PROPIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="POSICIÃ“N PROPIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESTINO FINAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESTINO FINAL" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\sd_pos_entregas\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_sd_pos_entregas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\sd_pos_entregas\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POSICIÃ“N]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="POSICIÃ“N"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MATERIAL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MATERIAL"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MATERIAL]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[MATERIAL]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UNIDAD DE MEDIDA]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UNIDAD DE MEDIDA"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UNIDAD_DE_MEDIDA]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[UNIDAD DE MEDIDA]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PEDIDO PROPIO]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PEDIDO PROPIO"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PEDIDO_PROPIO]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO PROPIO]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POSICIÃ“N PROPIO]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="POSICIÃ“N PROPIO"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION_PROPIO]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N PROPIO]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PEDIDO]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PEDIDO"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PEDIDO]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[PEDIDO]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NÃšMERO DE ENTREGA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="NÃšMERO DE ENTREGA"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_ENTREGA]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[NÃšMERO DE ENTREGA]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CANTIDAD]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CANTIDAD"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[CANTIDAD]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESTINO FINAL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DESTINO FINAL"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINO_FINAL]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[DESTINO FINAL]" />
+                    <inputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POSICIÃ“N2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="POSICIÃ“N2"
+                      externalMetadataColumnId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION_PEDIDOS]"
+                      lineageId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output].Columns[POSICIÃ“N2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PEDIDO]"
+                      dataType="wstr"
+                      length="50"
+                      name="PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION]"
+                      dataType="wstr"
+                      length="10"
+                      name="POSICION" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MATERIAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="MATERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UNIDAD_DE_MEDIDA]"
+                      dataType="wstr"
+                      length="50"
+                      name="UNIDAD_DE_MEDIDA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PEDIDO_PROPIO]"
+                      dataType="wstr"
+                      length="50"
+                      name="PEDIDO_PROPIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION_PROPIO]"
+                      dataType="wstr"
+                      length="10"
+                      name="POSICION_PROPIO" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO_DE_ENTREGA]"
+                      dataType="wstr"
+                      length="50"
+                      name="NUMERO_DE_ENTREGA" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD]"
+                      dataType="wstr"
+                      length="50"
+                      name="CANTIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSICION_PEDIDOS]"
+                      dataType="wstr"
+                      length="10"
+                      name="POSICION_PEDIDOS" />
+                    <externalMetadataColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESTINO_FINAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="DESTINO_FINAL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\sd_pos_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\sd_pos_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\sd_pos_entregas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\sd_pos_entregas.Paths[Flat File Source Output]"
+              endId="Package\sd_pos_entregas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\sd_pos_entregas\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d7f1dec6-95e7-467f-b99e-0985ad7b14ae}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SP"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec SP_Carga_Fact_Entregas" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="truncate"
+      DTS:DTSID="{390155cc-a62f-40f0-af1b-95592d0903be}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="truncate table int_sd_cab_entregas;&#xA;truncate table int_sd_pos_entregas;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z10 Error carga"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Error carga"
+      DTS:DTSID="{a0b862a8-1c26-40fc-9096-275eb1dcc7d9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z10 Error carga"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 4" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z5 Grabo error inexistencia archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Grabo error inexistencia archivo"
+      DTS:DTSID="{b2e7005f-924b-46b2-92b8-e57f413efe2c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z5 Grabo error inexistencia archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z6 Error en carga Interfaz"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Error en carga Interfaz"
+      DTS:DTSID="{d1609712-7249-4323-9203-569da9b47432}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z6 Error en carga Interfaz"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 5" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z6 Error en carga Interfaz 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Error en carga Interfaz"
+      DTS:DTSID="{86d11270-bda7-4fb7-ac20-9af3c6d7df59}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z6 Error en carga Interfaz 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D79D3E8-6134-46A0-8F08-E983555E8C6B}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 5" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{80522EDF-5C80-49F3-8B11-81F374E1EDFA}"
+      DTS:From="Package\truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\4 Comienzo de ejecucion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EBB1FBA1-6670-44C2-B9F0-602A31B1FBAA}"
+      DTS:From="Package\sd_cab_entregas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\sd_pos_entregas" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{F9539870-6F5C-4DEC-A66A-6C3021A81499}"
+      DTS:From="Package\SP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\z10 Error carga"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2C92823F-92E8-4146-92A2-386016716333}"
+      DTS:From="Package\sd_pos_entregas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{6FC40B26-70CD-4280-84A1-B511F7F10B3A}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe == 0"
+      DTS:From="Package\1 Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\2 Elegir el Proceso_key" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{C40A6F42-1DDD-41E5-8DC3-261FFDAE18C1}"
+      DTS:From="Package\2 Elegir el Proceso_key"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\truncate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{086A8D08-0077-4FFD-97DC-F039D07F6D57}"
+      DTS:From="Package\4 Comienzo de ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\sd_cab_entregas" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{7BAAE638-FBF5-435B-A0BA-59B66ECFFC61}"
+      DTS:From="Package\SP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\8 Finaliza OK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{023864A8-F7A0-4ACA-A2FF-09E18F6AA117}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe &gt; 0"
+      DTS:From="Package\1 Control existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\z5 Grabo error inexistencia archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{EC788B20-8343-494C-94F0-6101B1A9356F}"
+      DTS:From="Package\sd_cab_entregas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\z6 Error en carga Interfaz"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{D7FB1A30-B6F4-460D-BCB7-1E9BB63041E4}"
+      DTS:From="Package\sd_pos_entregas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\z6 Error en carga Interfaz 1"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\sd_cab_entregas"
+          TopLeft="303.958323033941,324.147370480975" />
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\sd_pos_entregas"
+          TopLeft="307.083322987375,424.761405530059" />
+        <NodeLayout
+          Size="93.3333333333334,42.6666666666667"
+          Id="Package\SP"
+          TopLeft="321.458322773171,510.936847681034" />
+        <NodeLayout
+          Size="118.666666666667,42.6666666666667"
+          Id="Package\truncate"
+          TopLeft="325.833322707978,144.796492296343" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="386.187489677325,366.814037147642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.9473683824174"
+              Start="0,0"
+              End="0,50.4473683824174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4473683824174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="387.749989654042,467.428072196726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.6250002142044,43.5087754843082"
+              Start="0,0"
+              End="-19.6250002142044,36.0087754843082">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7543877421541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7543877421541"
+                    Point2="0,21.7543877421541"
+                    Point3="-4,21.7543877421541" />
+                  <mssgle:LineSegment
+                    End="-15.6250002142044,21.7543877421541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.6250002142044,21.7543877421541"
+                    Point2="-19.6250002142044,21.7543877421541"
+                    Point3="-19.6250002142044,25.7543877421541" />
+                  <mssgle:LineSegment
+                    End="-19.6250002142044,36.0087754843082" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="210.666666666667,42"
+          Id="Package\1 Control existencia archivo"
+          TopLeft="80.6249987985939,51.3684215677742" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\2 Elegir el Proceso_key"
+          TopLeft="109.374998370186,138.263160045457" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="185.958332131927,93.3684215677742">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.58333376174167,44.8947384776831"
+              Start="0,0"
+              End="-8.58333376174167,37.3947384776831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4473692388416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4473692388416"
+                    Point2="0,22.4473692388416"
+                    Point3="-4,22.4473692388416" />
+                  <mssgle:LineSegment
+                    End="-4.58333376174167,22.4473692388416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.58333376174167,22.4473692388416"
+                    Point2="-8.58333376174167,22.4473692388416"
+                    Point3="-8.58333376174167,26.4473692388416" />
+                  <mssgle:LineSegment
+                    End="-8.58333376174167,37.3947384776831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.2916668808708,27.4473692388416,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="245.374998370186,163.196492837567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.4583243377925,0"
+              Start="0,0"
+              End="72.9583243377925,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="72.9583243377925,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198.666666666667,42.6666666666667"
+          Id="Package\4 Comienzo de ejecucion"
+          TopLeft="277.499995864928,232.410527100734" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="385.166656041311,187.46315896301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.33332684305026,44.9473681377241"
+              Start="0,0"
+              End="-8.33332684305026,37.4473681377241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4736840688621" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4736840688621"
+                    Point2="0,22.4736840688621"
+                    Point3="-4,22.4736840688621" />
+                  <mssgle:LineSegment
+                    End="-4.33332684305026,22.4736840688621" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.33332684305026,22.4736840688621"
+                    Point2="-8.33332684305026,22.4736840688621"
+                    Point3="-8.33332684305026,26.4736840688621" />
+                  <mssgle:LineSegment
+                    End="-8.33332684305026,37.4473681377241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="380.729159449434,275.0771937674">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.0701767135745"
+              Start="0,0"
+              End="0,41.5701767135745">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5701767135745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="140,42"
+          Id="Package\8 Finaliza OK"
+          TopLeft="318.749995250255,608.596498027953" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="368.124989439838,553.603514347701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.6250058104175,54.9929836802526"
+              Start="0,0"
+              End="20.6250058104175,47.4929836802526">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4964918401263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4964918401263"
+                    Point2="0,27.4964918401263"
+                    Point3="4,27.4964918401263" />
+                  <mssgle:LineSegment
+                    End="16.6250058104175,27.4964918401263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.6250058104175,27.4964918401263"
+                    Point2="20.6250058104175,27.4964918401263"
+                    Point3="20.6250058104175,31.4964918401263" />
+                  <mssgle:LineSegment
+                    End="20.6250058104175,47.4929836802526" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\z5 Grabo error inexistencia archivo"
+          TopLeft="328.749995101243,46.3929773555796" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="291.291665465261,70.0473661283436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.4583296359828,0"
+              Start="0,0"
+              End="29.9583296359828,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.9583296359828,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.9791648179914,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="200,42"
+          Id="Package\z6 Error en carga Interfaz"
+          TopLeft="38.1249994318931,325.000006117319" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="303.958323033941,345.740354965814">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-65.8333236020477,0"
+              Start="0,0"
+              End="-58.3333236020477,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-58.3333236020477,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-44.4080094572739,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\z6 Error en carga Interfaz 1"
+          TopLeft="36.8749994505196,417.491234548094" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="307.083322987375,442.45965337241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.8749902035219,0"
+              Start="0,0"
+              End="-53.3749902035219,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-53.3749902035219,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.9288427580109,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.666666666667,42"
+          Id="Package\z10 Error carga"
+          TopLeft="79.3749988172204,504.859654647712" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="321.458322773171,529.06491783104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.4166572892838,0"
+              Start="0,0"
+              End="-83.9166572892838,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83.9166572892838,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.1996763008919,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\sd_cab_entregas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174.4,42.4"
+          Id="Package\sd_cab_entregas\OLE DB Destination"
+          TopLeft="224.374996656552,219.631583081388" />
+        <NodeLayout
+          Size="154.4,42.4"
+          Id="Package\sd_cab_entregas\Flat File Source"
+          TopLeft="118.1249982398,118.368423280624" />
+        <EdgeLayout
+          Id="Package\sd_cab_entregas.Paths[Flat File Source Output]"
+          TopLeft="195.458331573133,161.035089947291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.249998416752,58.5964931340975"
+              Start="0,0"
+              End="116.249998416752,51.0964931340975">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2982465670487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2982465670487"
+                    Point2="0,29.2982465670487"
+                    Point3="4,29.2982465670487" />
+                  <mssgle:LineSegment
+                    End="112.249998416752,29.2982465670487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.249998416752,29.2982465670487"
+                    Point2="116.249998416752,29.2982465670487"
+                    Point3="116.249998416752,33.2982465670487" />
+                  <mssgle:LineSegment
+                    End="116.249998416752,51.0964931340975" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\sd_cab_entregas\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\sd_pos_entregas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174.4,42.4"
+          Id="Package\sd_pos_entregas\OLE DB Destination"
+          TopLeft="334.999995008111,215.526319846222" />
+        <NodeLayout
+          Size="154.4,42.4"
+          Id="Package\sd_pos_entregas\Flat File Source"
+          TopLeft="118.1249982398,118.368423280624" />
+        <EdgeLayout
+          Id="Package\sd_pos_entregas.Paths[Flat File Source Output]"
+          TopLeft="195.458331573134,161.03508994729">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226.874996768311,54.4912298989318"
+              Start="0,0"
+              End="226.874996768311,46.9912298989318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2456149494659"
+                    Point2="0,27.2456149494659"
+                    Point3="4,27.2456149494659" />
+                  <mssgle:LineSegment
+                    End="222.874996768311,27.2456149494659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222.874996768311,27.2456149494659"
+                    Point2="226.874996768311,27.2456149494659"
+                    Point3="226.874996768311,31.2456149494659" />
+                  <mssgle:LineSegment
+                    End="226.874996768311,46.9912298989318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\sd_pos_entregas\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
